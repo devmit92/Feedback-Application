@@ -1,48 +1,55 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
+import { connect } from 'react-redux';
+import { getFeedback } from '../../modules/services/FeedbackService';
 import Feeling from '../Feeling/Feeling';
-import Understanding from '../Understanding/Understanding';
-import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
-import Thankyou from '../Thankyou/Thankyou';
-
-
+import Support from '../Support/Support';
+import Understanding from '../Understanding/Understanding';
 
 
 class App extends Component {
 
-
-
   componentDidMount() {
-    // this.getFeedback();
-    // this.postFeedback();
+    this.refreshFeedback();
   }
 
-
+  refreshFeedback = () => {
+    getFeedback()
+      .then((response) => {
+        this.props.dispatch({
+          type: 'FEEDBACK_REDUX',
+          payload: response.data,
+        });
+      });
+  };
 
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Feedback Form</h1>
-         </header> 
-         <br/>
-         <Route exact path="/" component={Feeling} />
-         <Route exact path="/understanding" component={Understanding} />
-         <Route exact path="/support" component={Support} />
-         <Route exact path="/comments" component={Comments} />
-         <Route exact path="/review" component={Review} />
-         <Route exact path="/thankyou" component={Thankyou} />
-
-        </div> 
-     </Router>
-      
+        <div>
+          <div>
+            <div>
+              <div>
+                <h1>Feedback Form</h1>
+                <p>Don't forget it!</p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div>
+            <Route exact path='/' component={Feeling} />
+            <Route path='/understanding' component={Understanding} />
+            <Route path='/supported' component={Support} />
+            <Route path='/comments' component={Comments} />
+            <Route path='/review' component={Review} />
+          </div>
+        </div>
+      </Router>
     );
   }
 }
-
-export default App;
+export default connect(mapReduxStateToProps)(App);

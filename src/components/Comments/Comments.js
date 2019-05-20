@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import mapReduxStateToProps from '../../Modules/mapReduxStateToProps'
-import Review from '../Review/review';
+import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
+import Review from '../Review/Review';
 
 class Comments extends Component {
     constructor(props) {
