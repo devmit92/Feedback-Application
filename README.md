@@ -1,85 +1,36 @@
-# Redux Feedback Loop
+# Feedback Application
+
+Project Description can be here! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla eleifend consequat. Nulla sed eros ante. Curabitur ultricies in orci at maximus. Nam feugiat justo nec neque maximus condimentum. 
+
+Donec convallis sit amet leo non laoreet. Mauris luctus auctor erat, vitae pretium dolor bibendum vel. Ut a ante vel ante sagittis sollicitudin sed quis nunc. Curabitur semper bibendum urna, non blandit erat hendrerit nec.
 
 
->Do not clone this repository. Instead, download the zip, extract the contents, create a new GitHub repository and `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
+## Local Installation Directions
 
-**PLEASE COMMENT YOUR CODE.**
+- Fork this repository,
+- Clone contents within your terminal:
+   - `git clone <repoUrl.git>`
+- Navigate into the project directory:
+   - `cd projectFolderName`
+- Install dependencies:
+   - `npm install`
+- Run the server:
+   - `npm run server`
+- Build and run the client:
+   - `npm run client`
 
-"And my last reminder of the day, which is my last reminder of every day, is...?" - Luke
+(Note that the above is an example. Give specific directions.)
 
- For this assignment, you will be creating a feedback form modeled after Prime's system. Feedback will be collected over 4 views, and when all steps are complete, your app will save the feedback in the database. In a separate part of the page, display the current feedback values and a submit button. 
+## Reflection of Learning
 
-### SETUP
+When did this project occur?
+   - Example: This project occurred during our 6th week of the classroom.
 
-Create your database and tables using the provided `data.sql` file. Start the server.
+What did you learn from the project? Technology? Pattern?
+   - Example: This assignment covered handling click events within React. In doing so, we got the opportunity to explore how currying works to pass information about what was clicked, to the logic that handles the click. This became helpful because to date, we had been creating individual click handler methods for each interactive element, rather than being efficient and creating one method that could handle all of them.
 
-```
-npm install
-npm run server
-```
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
-
-```
-npm run client
-```
-
-### ADD NEW FEEDBACK
-
-> NOTE: As a baseline requirement, you must use Redux to store your data across views.
-
-Create a multi-part form that allows users to leave feedback for today. 
-There will be 4 views for the form parts.
-The parts:
-- How are you feeling today?
-![feeling](wireframes/feeling.png)
-- How well are you understanding the content?
-![understanding](wireframes/understanding.png)
-- How well are you being supported?
-![support](wireframes/supported.png)
-- Any comments you want to leave?
-![comments](wireframes/comments.png)
-
-While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process as well as update the `Review` Component.
-
-
-## THE REVIEW COMPONENT
-
-In addition to the multi-step form, the app needs to display the results of each step clearly and at all times. HINT: This will be your current redux values displayed on the DOM. 
-
-The simplest way could be another component on the DOM which shows the results of the current survey and a Submit button.
-
-### Incomplete, Submit button is disabled:
-
-![comments](wireframes/comments.png)
-
-### Survey complete, Submit button is active:
-
-![comments](wireframes/review.png)
-
-## SUBMIT THE FEEDBACK
-
-The `Review` portion needs a submit button which will be clicked on to actually submit the completed feedback to the server. **This submit button should only be active when all of the survey steps are complete.**
-
-When the submit button is clicked, save the submission in the database. The user should see a submission success page.
-
-![understanding](wireframes/page-five.png)
-
-
-
-## STRETCH GOALS
-
-> NOTE: These stretch goals are intended to be completed in order.
-
-### ADMIN SECTION
-
-Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
-
-![display feedback](wireframes/admin.png)
-
-### OTHER FEATURES
-
-- Update this README.md to describe the project in your own words
-- Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
-- Add the ability to flag an existing feedback entry for further review on the /admin view
-- Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
+## Questions? I would love to connect!
+Email - [devonamitchell10@gmail.com](mailto:devonamitchell10@gmail.com)
